@@ -21,16 +21,24 @@ public void register(Registrationpage r) {
 	System.out.println("Registration is done");
 	
 	}
-public void logininfo(ArrayList<List<String>> map, String s) {
+public void logininfo(ArrayList<Registrationpage> a, String s) {
 	boolean isExist = false;
-	for(int i=0; i<map.size(); i++)
-	{
-		if(s.equals(map.get(i)))
+	
+	
+	for(int i=0; i < a.size(); i++)
+		{
+		Registrationpage r2=(Registrationpage)a.get(i);
+		
+		System.out.println("==============================");
+		System.out.println(r2.getPassword());
+		String s2=r2.getPassword();
+		System.out.println(s);
+		if(s.equals(s2))
 		{
 		  isExist=true;
 		  break;
 		}
-		if(isExist=true)
+		if(isExist)
 		{
 			System.out.println("u are successfully logged in");
 		}
@@ -38,8 +46,7 @@ public void logininfo(ArrayList<List<String>> map, String s) {
 		{
 			System.out.println("not found");
 		}
-	}
-	
+		} 
 	
 }
 @Override

@@ -1,4 +1,4 @@
-package healthcare1;
+   package healthcare1;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,10 +10,11 @@ public abstract class User {
 try
 {
 	int n=0;
+	do
 	{
 		System.out.println("Health care system");
 		System.out.println("\t\t 1.Customer");
-		System.out.println("\t\t 2. Admin");
+		System.out.println("\t\t 2. Admin\n\t\tEnter your choice(1-2):");
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		int choice=Integer.valueOf(br.readLine());
 		
@@ -35,10 +36,16 @@ try
 			}
 			case 2:
 			{
-				System.out.println("Login");
+				System.out.println("\tLoginData");
 				new LoginData();
 				LoginData.main(null);
-				break;
+			   String s=br.readLine();
+			   {
+				   System.out.println("\tLoginData");
+				   new LoginData();
+				   LoginData.main(null);
+				    break;
+			}
 			}
 			default:
 			{
@@ -48,7 +55,7 @@ try
 			break;
 		case 2:
 		{
-			System.out.println("Admin");
+			System.out.println("\tAdmin");
 			new Admin();
 			Admin.main(null, null);
 			break;
@@ -58,12 +65,11 @@ try
 			System.out.println("invalid");
 		}
 	}
-		while(n<=2);
-}}
+	}while(n<=2);
+}
 	catch(Exception e)
 	{
 		System.out.println(e);
 	}
-
-}
+	}
 }

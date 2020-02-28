@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import bean.adminPage;
+
 public class AdminPageImple implements adminInterface {
 	HashMap<String, List<String>> l=new HashMap<String, List<String>>();
 	@Override
@@ -12,25 +14,30 @@ public class AdminPageImple implements adminInterface {
 	{
 		map.put("r",al2);
 		System.out.println("done");
-	}
-	@Override
-	public void removeCenter(Map<String, List<String>> map, String r) {
-		for (int i=0;i<map.size();i++)
-		{
-			if(map.containsKey(r))
-			{
-				map.remove(r);
-				System.out.println("Done");
-			}
 			for(Map.Entry<String, List<String>> entry : map.entrySet()) {
 				String key=entry.getKey();
 				List<String> values=entry.getValue();
-				System.out.println("Key = " + key);
+				System.out.println("Key = " + key); 
 				System.out.println("Values =" +values + "n");
 			}
 		}
-	}
 @Override
+public void removeCenter(Map<String, List<String>> map, String r) {
+	for(int i=0;i<map.size();i++)
+	{
+		if(map.containsKey(r))
+		{
+			map.remove(r);
+		}
+		System.out.println("Done");
+		for(Map.Entry<String,List<String>>entry : map.entrySet()) {
+			String key=entry.getKey();
+			List<String> values=entry.getValue();
+			System.out.println("Key ="+key);
+			System.out.println("Values ="+values + "n");
+		}
+	}
+}
 public void addTest(Map<String, List<String>> map, String s, String r) {
 	if(map.containsKey(s)) {
 		map.get(s).add(r);
@@ -41,6 +48,12 @@ public void addTest(Map<String, List<String>> map, String s, String r) {
 	map.put(s, list);
 	System.out.println("newly done");
 	}
+	for(Map.Entry<String, List<String>> entry :map.entrySet()) {
+		String key=entry.getKey();
+		List<String> values=entry.getValue();
+		System.out.println("Key ="+key);
+		System.out.println("Values ="+values + "n");
+	}
 	}
 @Override
 public void removeTest(Map<String, List<String>> map, String s,String r) {
@@ -48,6 +61,12 @@ public void removeTest(Map<String, List<String>> map, String s,String r) {
 	{
 		map.get(s).remove(r);
 		System.out.println("Done");
+		for(Map.Entry<String, List<String>> entry :map.entrySet()) {
+			String key=entry.getKey();
+			List<String> values=entry.getValue();
+			System.out.println("Key="+key);
+			System.out.println("Values ="+values + "n");
+		}
 	}
 	else {
 		System.out.println("Not done");

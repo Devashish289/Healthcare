@@ -1,4 +1,4 @@
-package bean;
+ package bean;
 
 public class adminPage {
 private String center_name;

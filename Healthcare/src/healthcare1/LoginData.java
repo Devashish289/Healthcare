@@ -1,4 +1,4 @@
-package healthcare1;
+ package healthcare1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,38 +11,36 @@ import bean.Registrationpage;
 public class LoginData {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+     // TODO Auto-generated method stub
+		 ArrayList al=new ArrayList();
 try
 {
-	BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-	ArrayList<List<String>> map=new ArrayList <List<String>>();
-	
-	List<String> valSetOne = new ArrayList<String>();
-	valSetOne.add("deva");
-	valSetOne.add("ankit");
-	
-	List<String> valSetTwo=new ArrayList<String>();
-	valSetTwo.add("7896789876");
-	valSetTwo.add("7867564534");
-	
-	List<String> valSetThree=new ArrayList<String>();
-	valSetThree.add("deva");
-	valSetThree.add("ankit");
-	
-	List<String> valSetFour= new ArrayList<String>();
-	valSetFour.add("deva");
-	valSetFour.add("ankit");
-	
-	map.add(valSetOne);
-	map.add(valSetTwo);
-	map.add(valSetThree);
-	map.add(valSetFour);
-	
-	RegisterPageImple obj3=new RegisterPageImple();
-	System.out.println("Enter password");
-	String s=br.readLine();
-	
-	obj3.logininfo(map, s);
+	BufferedReader br2=new BufferedReader(new InputStreamReader(System.in));
+	System.out.println("now Enter password to login");
+	String s=br2.readLine();
+	boolean isExist=false;
+	for(int i=0;i<al.size();i++)
+	{
+		Registrationpage r2=(Registrationpage)al.get(i);
+		
+		System.out.println("==============");
+		System.out.println(r2.getPassword());
+		String s2=r2.getPassword();
+		System.out.println(s);
+		if(s.equals(s2))
+		{
+			isExist=true;
+			break;
+		}
+}
+if(isExist)
+{
+	System.out.println("u are successfuly logged in");
+}
+else
+{
+	System.out.println("not found");
+}
 }
 catch(Exception e)
 {
